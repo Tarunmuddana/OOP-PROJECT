@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review Analyser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <header class="page-header">
+            <h1>Movie Review Analyser</h1>
+            <div class="search-bar-container">
+                <input type="text" id="movieSearchInput" placeholder="Search from your local movie database..." autocomplete="off">
+                <div class="autocomplete-results" id="autocompleteResults"></div>
+            </div>
+        </header>
+
+        <main id="details-view" class="details-view">
+            <!-- This section will be populated by JavaScript when a movie is selected -->
+            <section class="movie-details-card">
+                <img id="moviePoster" src="placeholder.png" alt="Movie Poster" class="movie-poster">
+                <div class="movie-info">
+                    <h2 id="movieTitle" class="movie-title"></h2>
+                    <div id="movieMeta" class="movie-meta"></div>
+                    <h3>Overview</h3>
+                    <p id="movieDescription" class="movie-description"></p>
+                </div>
+            </section>
+
+            <section class="cast-section card">
+                <h3>Top Billed Cast</h3>
+                <div id="castList" class="cast-list"></div>
+            </section>
+
+            <section class="similar-movies-section card">
+                <h3>Similar Movies</h3>
+                <div id="similarMoviesList" class="similar-movies-list"></div>
+            </section>
+            
+            <section class="review-section">
+                <div class="review-column">
+                    <div class="card">
+                        <h3>My Reviews Dashboard</h3>
+                        <div id="myReviewSummary" class="review-summary"></div>
+                        <div id="myReviewsList" class="review-list-container"></div>
+                    </div>
+                    <div class="card">
+                        <h3>Submit Your Review</h3>
+                        <form id="reviewForm">
+                             <div class="star-rating-input">
+                                <span class="star" data-value="1">&#9733;</span><span class="star" data-value="2">&#9733;</span><span class="star" data-value="3">&#9733;</span><span class="star" data-value="4">&#9733;</span><span class="star" data-value="5">&#9733;</span>
+                            </div>
+                            <textarea id="reviewText" placeholder="Write your review here..." rows="5" required></textarea>
+                            <button type="submit">Submit Review</button>
+                        </form>
+                        <div id="latest-result"></div>
+                    </div>
+                </div>
+                <div class="review-column">
+                    <div class="card">
+                        <h3>External Reviews (Pre-Analyzed)</h3>
+                        <div id="externalReviewsList" class="review-list-container"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

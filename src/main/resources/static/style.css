@@ -1,0 +1,55 @@
+/* --- Global Styles --- */
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f0f2f5; color: #333; margin: 0; line-height: 1.6; }
+h1, h2, h3 { color: #1c1e21; margin-top: 0; line-height: 1.2; }
+.card { background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); }
+
+/* --- Layout --- */
+.page-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+.page-header { text-align: center; margin-bottom: 2rem; }
+.details-view { display: none; flex-direction: column; gap: 2rem; }
+.details-view.visible { display: flex; }
+
+/* --- Search Bar --- */
+.search-bar-container { position: relative; max-width: 600px; margin: 1.5rem auto; }
+#movieSearchInput { width: 100%; padding: 1rem; font-size: 1rem; border-radius: 8px; border: 1px solid #ddd; box-sizing: border-box; }
+.autocomplete-results { position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-radius: 8px; max-height: 300px; overflow-y: auto; z-index: 1000; box-shadow: 0 8px 15px rgba(0,0,0,0.1); display: none; margin-top: 5px; }
+.autocomplete-item { padding: 1rem; cursor: pointer; border-bottom: 1px solid #eee; }
+.autocomplete-item:hover { background-color: #f0f2f5; }
+
+/* --- Movie Details Card --- */
+.movie-details-card { display: flex; gap: 2rem; align-items: flex-start; }
+.movie-poster { width: 250px; height: auto; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+.movie-info .movie-title { margin-bottom: 0.5rem; font-size: 2.5rem; }
+.movie-info .movie-meta { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; color: #555; font-size: 0.9rem; }
+.movie-info .movie-description { color: #444; font-size: 1.05em; }
+
+/* --- Cast & Similar Movies Section --- */
+.cast-list, .similar-movies-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1.5rem; }
+.cast-member, .similar-movie { text-align: center; cursor: pointer; }
+.cast-member img, .similar-movie img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5rem; transition: transform 0.2s; }
+.cast-member:hover img, .similar-movie:hover img { transform: scale(1.05); }
+.cast-member .name, .similar-movie .title { font-weight: bold; font-size: 0.9rem; }
+.cast-member .character { font-size: 0.8rem; color: #666; }
+
+/* --- Review Section --- */
+.review-section { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.review-column { display: flex; flex-direction: column; gap: 2rem; }
+.review-list-container { max-height: 300px; overflow-y: auto; padding-right: 5px; }
+.review-item { border-left: 3px solid #007bff; padding-left: 1rem; margin-bottom: 1rem; }
+.review-item h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+.review-item p { margin: 0; font-size: 0.95rem; }
+.review-summary { display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; margin-bottom: 1.5rem; gap: 1rem; }
+.summary-item .value { font-size: 1.8rem; font-weight: bold; color: #007bff; }
+.summary-item .label { font-size: 0.8rem; text-transform: uppercase; color: #666; }
+#reviewForm textarea { width: 100%; box-sizing: border-box; padding: 0.75rem; font-size: 1rem; border-radius: 6px; border: 1px solid #ddd; margin-bottom: 1rem; resize: vertical; }
+#reviewForm button { width: 100%; padding: 0.75rem; background-color: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; font-weight: bold; }
+#latest-result { text-align: center; margin-top: 1rem; padding: 0.75rem; background: #e9ecef; border-radius: 6px; }
+
+/* --- Star Ratings --- */
+.star-rating-input { margin-bottom: 1rem; text-align: center; }
+.star-rating-input .star, .star-rating-display .star { font-size: 2rem; color: #ccc; cursor: pointer; display: inline-block; }
+.star-rating-input .star:hover, .star-rating-input .star.hover, .star-rating-input .star.filled { color: #ffc107; }
+.star-rating-input .star.half, .star-rating-display .star.half { background: linear-gradient(90deg, #ffc107 50%, #ccc 50%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #ffc107; }
+.star-rating-display { font-size: 1rem; margin-bottom: 0.5rem; }
+.star-rating-display .star { cursor: default; }
+.star-rating-display .star.filled { color: #ffc107; }
